@@ -13,11 +13,11 @@ namespace BaltaDataAccess
             
             using (var connection = new SqlConnection(connectionString))
             {
-                var categories = connection.Query<Category>("SELECT [Id], [Title] FROM [Category]");
+                var categories = connection.Query<Category>("SELECT [Id] AS [Codigo], [Title] AS [Titulo] FROM [Category]");
 
                 foreach (var category in categories)
                 {
-                    Console.WriteLine($"{category.Id} - {category.Title}");
+                    Console.WriteLine($"{category.Codigo} - {category.Titulo}");
                 }
             }
 
